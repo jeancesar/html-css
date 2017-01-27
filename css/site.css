@@ -30,6 +30,9 @@ h1 {
     clear: both;
 }
 
+main {
+    width: calc(100% - 0.9 * 300px);
+}
 main a {
     color: #851944;
 }
@@ -51,6 +54,7 @@ main p {
     background-color: #3C1D3D;
     color: #F2FFFC;
     padding: 20px;
+    width: calc(0.9 * 300px);
 }
 
 .navegacao-site a {
@@ -111,6 +115,32 @@ em {
     height: 40px;
     display: block;
     text-indent: -99999px;
+    position: relative;
+}
+
+.icones-redes-sociais a:hover::before,
+.icones-redes-sociais a:focus::before {
+    content: '';
+    background-color: black;
+    width: 1em;
+    height: 1em;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translateY(.5em) rotate(45deg);
+
+} 
+
+.icones-redes-sociais a:hover::after,
+.icones-redes-sociais a:focus::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: 100%;
+    right: 0;
+    text-indent: 0;
+    width: 300%;
+    background: black;
+    font-size: .75em;
 }
 
 .github {
